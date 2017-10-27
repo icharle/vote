@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="__PUBLIC__/admin/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/bootstrap.min.css"/>
+    <script type="text/javascript" src="__PUBLIC__/first/js/jquery.1.10.2.js"></script>
+    <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+    <title>管理员后台</title>
+</head>
+<body>
+<div class="container table-responsive">
+    <h2>投票控制</h2>
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>班级</th>
+            <th>控制</th>
+            <th>当前状态</th>
+            <th>当前总票数</th>
+            <th>减票</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="res" item="k">
+            <tr>
+                <td>{$k.class}</td>
+                <td>
+                    <a href="javascript:;" onclick="start('{$k.id}')">启用</a>
+                    <a href="javascript:;" onclick="stop('{$k.id}')">停止</a>
+                </td>
+                <td>
+                    <if condition="$k['img'] eq 1">正在投票
+                        <else/>
+                        未在投票
+                    </if>
+                </td>
+                <td>{$k.count}</td>
+                <td>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" value=" " >
+                            <span class="input-group-btn">
+                                <button class="btn btn-default cut" type="button" data-classname="{$k.class}">确定</button>
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+</div>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: ''
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['工管6班','会计10班','人力2班','会计5班','工管2班','人力4班,会计4, 6班','市营1, 2班']
+        },
+        grid: {
+            left: '6%',
+            right: '4%',
+            bottom: '9%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['6:50','7:10','7:30','7:50','8:10','8:30','8:50','9:10']
+            //data: [{$data0}]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'工管6班',
+                type:'line',
+                stack: '总量',
+                //data:[0, 182, 191, 234, 290, 330, 310,230]
+                data:[0,{$data1}]
+            },
+            {
+                name:'会计10班',
+                type:'line',
+                stack: '总量',
+                data:[0,{$data2}]
+            },
+            {
+                name:'人力2班',
+                type:'line',
+                stack: '总量',
+                data:[0,{$data3}]
+            },
+            {
+                name:'会计5班',
+                type:'line',
+                stack: '总量',
+                data:[0,{$data4}]
+            },
+            {
+                name:'工管2班',
+                type:'line',
+                stack: '总量',
+                data:[0,{$data5}]
+            },
+            {
+                name:'人力4班,会计4, 6班',
+                type:'line',
+                stack: '总量',
+                //data:[{$data1}]
+                data:[0,{$data6}]
+            },
+            {
+                name:'市营1, 2班',
+                type:'line',
+                stack: '总量',
+                data:[0,{$data7}]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+<script>
+
+    //启用
+    function start(id) {
+        $.ajax({
+            type: "POST",
+            url: "/class/index.php/AdminXingkong/Index/start",
+            data: {
+                id: id
+            },
+            success: function (data) {
+                if (data.status == 1) {
+                    location.href = location.href;
+                } else {
+                    //location.href = location.href;
+                }
+            }
+
+        });
+    }
+
+    //停止
+    function stop(id) {
+        $.ajax({
+            type: "POST",
+            url: "/class/index.php/AdminXingkong/Index/stop",
+            data: {
+                id: id
+            },
+            success: function (data) {
+                if (data.status == 1) {
+                    location.href = location.href;
+                } else {
+                    //location.href = location.href;
+                }
+            }
+
+        });
+    }
+
+    $(".cut").click(function(){
+
+        if(flag){
+            return;
+        }
+        var flag = true;
+        var input = $(this).parent().parent().children('input');
+        var classname = $(this).data('classname');
+        $.ajax({
+            type: "POST",
+            url: "/class/index.php/AdminXingkong/Index/cut",
+            data: {
+                classname: classname,
+                num: $(input).val()
+            },
+            success: function (data) {
+                flag = false;
+                if (data.status == 1) {
+                    location.href = location.href;
+                } else {
+                    //location.href = location.href;
+                }
+            }
+
+        });
+    });
+
+</script>
+</html>

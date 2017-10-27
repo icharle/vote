@@ -1,0 +1,203 @@
+body {
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-image: url("../img/background.png");
+    font-family: 微软雅黑;
+}
+
+.img1{
+	width: 100%;
+	height: 40%;
+}
+.img2{
+    width: 75%;
+    height: 45%;
+    position: relative;
+    top: -20px;
+    left: 25%;
+}
+.img3{
+    width: 45%;
+    height: 45%;
+    position: relative;
+    top: -30px;
+    left: 30%;
+}
+
+.banner{
+
+}
+.content{
+    width: 95%;
+    height: 280px;
+    margin-top: -15px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wenzi{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -55px;
+	left: 10px;
+}
+.cl{
+	width: 23%;
+	height: 45%;
+	float: left;
+	background: white;
+	position: relative;
+	vertical-align:middle;
+    text-align: center;
+}
+.mgl{
+	margin-left: 2%;
+}
+.mgl1{
+	margin-left: 1%;
+}
+.mgl2{
+    margin-left: 15%;
+}
+.mgt{
+	margin-top: 10px;
+}
+.clname{
+	font-size: 16px;
+    width: 20px;
+    position: absolute;
+    background: #ea3f35;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    height: 88px;
+    color: white;
+    font-weight: 600;
+}
+.clname2{
+    font-size: 16px;
+    width: 20px;
+    position: absolute;
+    background: #ea3f35;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    height: 88px;
+    color: white;
+    font-weight: 600;
+}
+.clname3{
+    font-size: 16px;
+    width: 20px;
+    position: absolute;
+    background: #ea3f35;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    height: 110px;
+    color: white;
+    font-weight: 600;
+}
+.pgname{
+    display: none;
+}
+.vote{
+    transition: opacity 2s;
+    width: 269px;
+    height: 40%;
+    background: #ea3f35;
+    position: absolute;
+    margin-left: 50%;
+    left: -139px;
+    top: 20%;
+    border: 2px solid white;
+    border-radius: 7px;
+}
+.close{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+.clpicture{
+	width: 75px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
+.vote_clpg{
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    right: 0px;
+    top: 35px;
+    font-size: 15px;
+}
+.vote_clname{
+    font-size: 18px;
+    color: white;
+    font-weight:600;
+    position: absolute;
+    right: 5px;
+    top: 16px;
+}
+
+.vote_clvote{
+	font-size: 24px;
+    color: #f47d72;
+    font-weight: 600;
+    position: absolute;
+    right: 5px;
+    top: 37px;
+}
+.button{
+	width: 43px;
+    height: 18px;
+    text-align: center;
+    background: white;
+    border: 2px solid white;
+    border-radius: 7px;
+    position: absolute;
+    right: 9px;
+    bottom: 10px;
+    color: #ea3f35;
+    font-size: 13px;
+}
+footer{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+}
+#Verification_Code{
+
+}
+#Code_img{
+    width: 135px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
+#Code_text{
+    width: 86px;
+    height: 25px;
+    position: relative;
+    top: 43px;
+    left: -87px;
+    text-align: center;
+    font-size: 20px;
+}

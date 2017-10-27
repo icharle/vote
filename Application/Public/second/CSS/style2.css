@@ -1,0 +1,147 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+html{
+	min-width: 1800px;
+	height: 720px;
+}
+body{
+	background-image: url(../image/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: rgb(255,255,255);
+}
+.votetext{
+	width: 100px;
+    height: 80px;
+	background: url(../image/æŠ•ç¥¨.jpg);
+	background-size: 100% 100%;
+	float: left;
+	position: relative;
+	top: -85px;
+	left: 20px;
+}
+.part1{
+	margin:10% 0 0 54.5%;
+	width: 775px;
+	height: 450px;
+	position: relative;
+	background-image: url(../image/投票框.PNG);
+	background-size: cover;
+}
+.part1 .rows{
+	width: 100%;
+	height: 435px;
+	overflow: hidden;
+}
+.row{
+	list-style: none;
+	float: left;
+	width: 37px;
+	height: 135px;
+	margin-left: 73px;
+	background: rgb(255,255,255);
+	border-radius: 10px 10px 0px 0px;
+}
+.row1{
+	list-style: none;
+	float: left;
+	width: 37px;
+	height: 135px;
+	margin-left: 47px;
+	background: rgb(255,255,255);
+	border-radius: 10px 10px 0px 0px;
+}
+.part1 .classNames{
+	margin: 10px 0 0 20px;
+	width: 100%;
+	color: rgb(255,255,255);
+}
+.part1 .classNames .c{
+	list-style: none;
+	float: left;
+	width: 80px;
+	height: 135px;
+	margin-left: 28px;
+	font-weight: 600px;
+}
+.c2{
+	list-style: none;
+	float: left;
+	width: 93px;
+	height: 135px;
+	margin-left: 25px;
+	font-weight: 600;
+}
+.className{
+	list-style: none;
+	float: left;
+	width: 29px;
+	height: 135px;
+	font-size: 28px;
+	font-weight: 900;
+}
+.showName{
+	list-style: none;
+	float: left;
+	width: 28px;
+	height: 238px;
+	font-size: 21px;
+	writing-mode:vertical-rl;
+	font-weight: 900;
+}
+.t{
+	font-size: 28px;
+	font-weight: 900;
+	position: absolute;
+	color: rgb(255,255,255);
+	font-style: italic;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+	margin-left: -5px;
+}
+.part2{
+	margin: 257px 0 0 64.5%;
+	width: 447px;
+	height: 30px;
+}
+.part2 .totalText{
+	display: inline-block;
+	width: 91px;
+	height: 31px;
+	font-size: 25px;
+	font-weight: 600;
+	color: rgb(255,255,255);
+}
+.part2 #bootstrap{
+	width: 344px;
+	height: 30px;
+	background: rgb(35,39,47);
+	border-radius: 20px;
+	border-top: 1px solid rgb(0,0,0);
+	float: right;
+}
+.part2 #bootstrap #bootstrapInner{
+	width: 70%;
+	height: 24px;
+	margin: 3px;
+	background: rgb(219,69,69);
+	border-radius: 20px;
+}
+.part2 #totalNum{
+	width: 84px;
+	height: 37px;
+	line-height: 31px;
+	margin: -6px 0 0 70%;
+	text-align: center;
+	vertical-align: center;
+	background: rgb(35,39,47);
+	border-radius: 13px;
+	font-size: 20px;
+}
+#totalNum{
+	font-weight: 900;
+}
